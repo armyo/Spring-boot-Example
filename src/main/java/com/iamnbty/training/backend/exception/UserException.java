@@ -6,6 +6,10 @@ public class UserException extends BaseException {
         super("user." + code);
     }
 
+    public static UserException notFound() {
+        return new UserException("not.found");
+    }
+
     public static UserException requestNull() {
         return new UserException("register.request.null");
     }
@@ -14,4 +18,29 @@ public class UserException extends BaseException {
         return new UserException("register.email.null");
     }
 
+    // CREATE
+    public static UserException createEmailNull() {
+        return new UserException("create.email.null");
+    }
+
+    public static UserException createEmailDuplicate() {
+        return new UserException("create.email.duplicate");
+    }
+
+    public static UserException createPasswordNull() {
+        return new UserException("create.password.null");
+    }
+
+    public static UserException createNameNull() {
+        return new UserException("create.name.null");
+    }
+
+    // Login
+    public static UserException loginFailEmailNotFound() {
+        return new UserException("login.fail");
+    }
+
+    public static UserException loginFailPasswordIncorrect() {
+        return new UserException("login.fail");
+    }
 }
